@@ -1,50 +1,82 @@
-# Smox portfolio — updated files
+# Smox Portfolio
 
-Replace index.html, style.css and app.js in your existing portfolio folder. Add projects.js alongside them. Keep your existing image assets in that folder.
+A static portfolio website built with HTML, CSS and vanilla JavaScript.
 
-## Required existing assets
-- logo.png (dark theme)
-- logo-light.png (rename your Lavender and purple logo swap image)
-- character.png (head layer)
-- character-original.png (body and eye texture)
-- cv.pdf (your resume; matches the filename in your folder screenshot)
+## Run locally
 
-These personal assets are not bundled, except logo-light.png supplied in this conversation. This package updates the code; merge it into your current folder rather than deleting that folder.
+1. Extract the ZIP.
+2. Open `index.html` in a browser, or open the folder with VS Code and use Live Server.
+3. Keep the folder structure intact so the images, logo files and CV load correctly.
 
-## Configure contact and project links
-Open projects.js. Fill contact.email and contact.linkedin. Fill each project's live and repo fields with real https URLs. Empty values are hidden automatically. No online status is assumed.
+## Included files
 
-## Screenshots and demos
-Create images/elitewheels/ and videos/ in your portfolio folder (or use your own paths).
-For example, replace an empty screenshots array with:
+- `index.html` — page content and project dialog
+- `style.css` — responsive layout, themes and animations
+- `app.js` — interactions, navigation, character animation and project dialogs
+- `projects.js` — project descriptions, screenshots and optional external links
+- `images/` — project screenshots for Vintage Clothing, Walid Books and Ana Wa Dîni
+- `logo.png`, `logo-light.png` — theme logos
+- `character.png`, `character-original.png` — animated character artwork
+- `cv.pdf` — resume download
 
+## Update your contact details and project links
+
+Open `projects.js` and edit:
+
+```js
+contact: {
+  email: 'your-real-email@example.com',
+  linkedin: 'https://www.linkedin.com/in/your-real-profile/'
+}
+```
+
+Replace the example values only with your real details. Each project supports:
+
+- `live`: public website URL
+- `repo`: public source-code URL
+- `screenshots`: local image paths and descriptive alt text
+- `demo`: local MP4 path (plays inside the project dialog)
+- `demoUrl`: external demo URL (opens from the dialog)
+- `poster`: optional poster image for a local video
+
+Leave values empty when a link or demo is not available. The portfolio hides unavailable links rather than showing placeholder destinations.
+
+## Add screenshots or a video
+
+Put new images inside an appropriate folder under `images/`, then add them to that project's `screenshots` array in `projects.js`:
+
+```js
 screenshots: [
   { src: 'images/elitewheels/home.png', alt: 'EliteWheels homepage' },
-  { src: 'images/elitewheels/fleet.png', alt: 'Fleet filters and car listings' }
-],
+  { src: 'images/elitewheels/fleet.png', alt: 'Vehicle fleet and filters' }
+]
+```
+
+For a local video, put the MP4 in a `videos/` folder and set:
+
+```js
 demo: 'videos/elitewheels-demo.mp4',
-poster: 'images/elitewheels/home.png',
+poster: 'images/elitewheels/home.png'
+```
 
-Only add paths for files you actually have. No media is fabricated or bundled. Local MP4 videos play inside the popup. For YouTube or Vimeo, put the public video URL in demoUrl; it opens through a Watch demo link. Do not put a YouTube page URL in demo.
+Only add files and URLs that exist and that you are comfortable showing publicly.
 
-## Included updates
-- Professional projects: Walid Books and Ana Wa Dîni.
-- Personal/academic projects: EliteWheels, OnlyGym and Smox Portfolio.
-- Grouped skills, with data/AI clearly marked as learning.
-- Clickable IBM Data Fundamentals credential on Credly.
-- Dark and lavender themes, swapped logos and matching browser color.
-- Responsive menu with all sections reachable on mobile.
-- Optional screenshot gallery with arrows, swipe and full-image links.
-- Optional video, live website, external demo and repository links.
-- Native modal Escape handling, focus return and stopped video on close.
-- Cursor tracking pauses offscreen, in background tabs and during dialogs.
-- Reduced-motion support and skip-to-content link.
-- Section numbering corrected; duplicate credential removed from Journey.
+## Before publishing
 
-OnlyGym descriptions are deliberately limited to known C#/WinForms work. Review skills and all project descriptions before publishing, and remove anything you cannot demonstrate. Language proficiency levels are not asserted.
+- Add your real email and LinkedIn URL in `projects.js`.
+- Check every project description and remove anything you cannot confidently demonstrate.
+- Confirm the CV is current and contains the contact details you want public.
+- Test the mobile menu, both themes, project popups, screenshot galleries and CV download.
+- Open every live/repository/demo link once after configuring it.
 
-## Preview
-Open index.html in your browser, or use VS Code Live Server. Verify both themes, mobile navigation, your CV download and every configured URL after adding your original assets and media.
+## Validation
 
-## Validation performed
-JavaScript syntax checks passed for app.js and projects.js. HTML nesting, unique IDs, required targets and CSS brace balance passed. Browser rendering could not be tested because no browser executable is installed in the build environment. Your original character/logo/CV assets and actual media remain necessary for final visual verification.
+`app.js` and `projects.js` pass Node.js syntax checks. Static checks found no duplicate HTML IDs, no missing local assets referenced by `index.html`, no missing ID selectors used by `app.js`, and balanced CSS braces. A full interactive browser test could not be completed in this environment.
+
+
+## Updating your portfolio
+
+- Edit `projects.js` to update contact details, project dates, descriptions, screenshots and links.
+- Project cards are sorted newest-first using each project's `sortDate` (`YYYY-MM`).
+- Add project screenshots under `images/<project-name>/` and list them in that project's `screenshots` array.
+- The LinkedIn profile is configured. Add the confirmed email address to `contact.email` in `projects.js`; it will appear as a working `mailto:` button.
