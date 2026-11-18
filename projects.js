@@ -44,7 +44,7 @@ window.PORTFOLIO = {
         { src: 'images/vintage/cart.png', alt: 'Cart with WhatsApp order button' },
         { src: 'images/vintage/form.png', alt: 'Order and customer details form' }
       ],
-      live: 'https://smoxarea.pythonanywhere.com', repo: '', demo: '', demoUrl: '', poster: ''
+      live: 'https://smoxarea.pythonanywhere.com', repo: 'https://github.com/jeon7kira-web/VintageClothing', demo: '', demoUrl: '', poster: ''
     },
     dini: {
       title: 'Ana Wa Dîni',
